@@ -18,5 +18,14 @@ package com.googlecode.gwtphonegap.client.file;
 import java.util.Date;
 
 public interface Metadata {
-	public Date getModificationTime();
+
+	Date getModificationTime();
+
+	Long getSize();
+
+	String getType();
+
+	String getName();
+
+	String getFullPath();
 }

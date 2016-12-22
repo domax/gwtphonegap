@@ -41,4 +41,23 @@ public class MetaDataBrowserImpl implements Metadata {
 		return result.getModificationTime();
 	}
 
+	@Override
+	public Long getSize() {
+		return result.getSize();
+	}
+
+	@Override
+	public String getType() {
+		return result.getType();
+	}
+
+	@Override
+	public String getName() {
+		return result.getName();
+	}
+
+	@Override
+	public String getFullPath() {
+		return result.getFullPath();
+	}
 }

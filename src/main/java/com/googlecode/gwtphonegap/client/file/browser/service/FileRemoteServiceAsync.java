@@ -52,7 +52,7 @@ public interface FileRemoteServiceAsync {
 	/**
 	 * @param absPath
 	 * @param flagsDTO
-	 * @param asyncCallback
+	 * @param callback
 	 */
 	void getFile(String absPath, FlagsDTO flagsDTO, AsyncCallback<FileSystemEntryDTO> callback);
 
@@ -60,7 +60,7 @@ public interface FileRemoteServiceAsync {
 
 	/**
 	 * @param fullPath
-	 * @param asyncCallback
+	 * @param callback
 	 */
 	void removeFile(String fullPath, AsyncCallback<Boolean> callback);
 
@@ -68,34 +68,33 @@ public interface FileRemoteServiceAsync {
 	 * @param fileFullPath
 	 * @param directoryFullPath
 	 * @param newName
-	 * @param asyncCallback
+	 * @param callback
 	 */
 	void moveFile(String fileFullPath, String directoryFullPath, String newName, AsyncCallback<FileSystemEntryDTO> callback);
 
 	/**
 	 * @param dirPath
 	 * @param newName
-	 * @param newName2
-	 * @param asyncCallback
+	 * @param callback
 	 */
 	void copyFile(String filePath, String dirPath, String newName, AsyncCallback<FileSystemEntryDTO> callback);
 
 	/**
 	 * @param fullPath
-	 * @param asyncCallback
+	 * @param callback
 	 */
 	void getFileObject(String fullPath, AsyncCallback<FileObjectDTO> callback);
 
 	/**
 	 * @param absPath
 	 * @param flagsDTO
-	 * @param asyncCallback
+	 * @param callback
 	 */
 	void getDirectory(String absPath, FlagsDTO flagsDTO, AsyncCallback<FileSystemEntryDTO> callback);
 
 	/**
 	 * @param fullPath
-	 * @param asyncCallback
+	 * @param callback
 	 */
 	void removeRecursively(String fullPath, AsyncCallback<Boolean> callback);
 
@@ -111,7 +110,7 @@ public interface FileRemoteServiceAsync {
 	 * @param fullPath
 	 * @param newDir
 	 * @param newName
-	 * @param asyncCallback
+	 * @param callback
 	 */
 	void copyDiretory(String fullPath, String newDir, String newName, AsyncCallback<FileSystemEntryDTO> callback);
 

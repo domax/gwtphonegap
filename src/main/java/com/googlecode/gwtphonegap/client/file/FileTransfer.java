@@ -16,9 +16,9 @@
 package com.googlecode.gwtphonegap.client.file;
 
 public interface FileTransfer {
-	public void upload(String fileUri, String serverUrl, FileUploadOptions options, FileUploadCallback callback);
+	void upload(String fileUri, String serverUrl, FileUploadOptions options, FileUploadCallback callback);
 
-	public void download(String sourceUrl, String filePath, FileDownloadCallback callback);
+	void download(String sourceUrl, String filePath, FileDownloadCallback callback);
 
-	public void abort();
+	void abort();
 }

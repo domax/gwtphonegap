@@ -22,18 +22,39 @@ import com.googlecode.gwtphonegap.client.file.Metadata;
 
 public final class MetaDataJsImpl extends JavaScriptObject implements Metadata {
 
-	protected MetaDataJsImpl() {
-
-	}
+	protected MetaDataJsImpl() {}
 
 	@Override
 	public native Date getModificationTime() /*-{
 		return @com.googlecode.gwtphonegap.client.file.js.MetaDataJsImpl::createDate(D)(this.modificationTime.getTime());
 	}-*/;
 
-	public static final Date createDate(double value) {
-		long time = Math.round(value);
-		return new Date(time);
+	@Override
+	public native Long getSize() /*-{
+		return @com.googlecode.gwtphonegap.client.file.js.MetaDataJsImpl::createSize(D)(this.size);
+	}-*/;
+
+	@Override
+	public native String getType() /*-{
+		return this.type;
+	}-*/;
+
+	@Override
+	public native String getName() /*-{
+		return this.name;
+	}-*/;
+
+	@Override
+	public native String getFullPath() /*-{
+		return this.fullPath;
+	}-*/;
+
+	private static Date createDate(double value) {
+		return new Date(Math.round(value));
 	}
 
+	@SuppressWarnings("UnnecessaryBoxing")
+	private static Long createSize(double value) {
+		return new Long(Math.round(value));
+	}
 }

@@ -51,6 +51,7 @@ import java.util.logging.Logger;
  * @author Daniel Kurka
  * 
  */
+@SuppressWarnings("GwtServiceNotRegistered")
 public class FileRemoteServiceServlet extends RemoteServiceServlet implements FileRemoteService {
 
 	/**
@@ -323,7 +324,7 @@ public class FileRemoteServiceServlet extends RemoteServiceServlet implements Fi
 
 		ensureLocalRoot(basePath, file);
 
-		return new MetaDataDTO(new Date(file.lastModified()));
+		return new MetaDataDTO(new Date(file.lastModified()), file.length(), guessMimeType(file), file.getName(), fullPath);
 	}
 
 	@Override

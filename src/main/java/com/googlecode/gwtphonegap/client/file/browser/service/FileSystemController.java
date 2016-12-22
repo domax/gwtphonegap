@@ -138,7 +138,7 @@ public class FileSystemController {
 
 	/**
 	 * @param entry
-	 * @param asyncCallback
+	 * @param callback
 	 */
 	public void readAsText(FileObject entry, AsyncCallback<String> callback) {
 		service.readAsText(entry.getFullPath(), callback);
@@ -277,8 +277,8 @@ public class FileSystemController {
 	}
 
 	/**
-	 * @param fullPath
-	 * @param fullPath2
+	 * @param fileFullPath
+	 * @param directoryFullPath
 	 * @param newName
 	 * @param callback
 	 */
@@ -301,9 +301,9 @@ public class FileSystemController {
 	}
 
 	/**
-	 * @param fullPath
+	 * @param filePath
+	 * @param dirPath
 	 * @param newName
-	 * @param
 	 * @param callback
 	 */
 	public void copyFile(String filePath, String dirPath, String newName, final FileCallback<FileEntry, FileError> callback) {
@@ -414,7 +414,7 @@ public class FileSystemController {
 
 	/**
 	 * @param fullPath
-	 * @param fullPath2
+	 * @param newParent
 	 * @param newName
 	 * @param callback
 	 */
@@ -438,7 +438,7 @@ public class FileSystemController {
 
 	/**
 	 * @param fullPath
-	 * @param fullPath2
+	 * @param newDir
 	 * @param newName
 	 * @param callback
 	 */
@@ -462,7 +462,7 @@ public class FileSystemController {
 
 	/**
 	 * @param entry
-	 * @param asyncCallback
+	 * @param callback
 	 */
 	public void readAsDataUrl(FileObject entry, AsyncCallback<String> callback) {
 		service.readAsDataUrl(entry.getFullPath(), callback);

@@ -29,16 +29,23 @@ public class MetaDataDTO implements Serializable {
 	 */
 	private static final long serialVersionUID = -9050831658160127146L;
 	private Date lastModified;
+	private long size;
+	private String type;
+	private String name;
+	private String fullPath;
 
 	//GWT
 	@SuppressWarnings("unused")
 	private MetaDataDTO() {
-
+		this(null, 0, null, null, null);
 	}
 
-	public MetaDataDTO(Date lastModified) {
+	public MetaDataDTO(Date lastModified, long size, String type, String name, String fullPath) {
 		this.lastModified = lastModified;
-
+		this.size = size;
+		this.type = type;
+		this.name = name;
+		this.fullPath = fullPath;
 	}
 
 	/**
@@ -46,5 +53,21 @@ public class MetaDataDTO implements Serializable {
 	 */
 	public Date getModificationTime() {
 		return lastModified;
+	}
+
+	public long getSize() {
+		return size;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getFullPath() {
+		return fullPath;
 	}
 }
